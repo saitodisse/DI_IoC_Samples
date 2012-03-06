@@ -11,6 +11,7 @@ namespace ndiTeste2
             IMeuRepositorio _meuRepositorio = new MeuRepositorio();
             IMeuServicoUtil _meuServicoUtil = new MeuServicoUtil(_meuRepositorio);
             _servico = new MeuServico(_meuServicoUtil);
+
             _servico.Executar();
         }
     }
@@ -29,15 +30,11 @@ namespace ndiTeste2
             _meuServicoUtil = meuServicoUtil;
         }
 
-        #region IMeuServico Members
-
         public void Executar()
         {
             Console.WriteLine("Sou o serviço principal e chamo o serviço utilitário");
             _meuServicoUtil.Executar();
         }
-
-        #endregion
     }
 
 

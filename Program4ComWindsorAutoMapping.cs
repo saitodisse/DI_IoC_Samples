@@ -1,6 +1,7 @@
 ﻿using System;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
+using ndiTeste2;
 
 namespace ndiTeste4
 {
@@ -77,13 +78,9 @@ namespace ndiTeste4
 
     public class MeuRepositorio : IMeuRepositorio
     {
-        #region IMeuRepositorio Members
-
         public void Repositoriar()
         {
-            Console.WriteLine("Eu sou o repositório");
+            Console.WriteLine("Eu sou o repositório MeuRepositorio 1");
         }
-
-        #endregion
     }
 }
