@@ -33,11 +33,14 @@ namespace ndiTeste3
 
     public class MeuServico : IMeuServico
     {
-        private readonly IMeuServicoUtil _meuServicoUtil;
+        private IMeuServicoUtil _meuServicoUtil;
+        private IMeuRepositorio _meuRepositorio;
 
-        public MeuServico(IMeuServicoUtil meuServicoUtil)
+        public MeuServico(IMeuServicoUtil meuServicoUtil,
+                          IMeuRepositorio meuRepositorio)
         {
             _meuServicoUtil = meuServicoUtil;
+            _meuRepositorio = meuRepositorio;
         }
 
         #region IMeuServico Members
@@ -46,6 +49,7 @@ namespace ndiTeste3
         {
             Console.WriteLine("Sou o serviço principal e chamo o serviço utilitário");
             _meuServicoUtil.Executar();
+            _meuRepositorio.Repositoriar();
         }
 
         #endregion

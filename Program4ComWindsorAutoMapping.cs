@@ -11,11 +11,17 @@ namespace ndiTeste4
 
         public void Main(string[] args)
         {
-            var container = new WindsorContainer();
-            container.Register(AllTypes.FromThisAssembly().Pick().WithService.DefaultInterface());
+            var container = InicializarContainer();
 
             _servico = container.Resolve<IMeuServico>();
             _servico.Executar();
+        }
+
+        private static WindsorContainer InicializarContainer()
+        {
+            var container = new WindsorContainer();
+            container.Register(AllTypes.FromThisAssembly().Pick().WithService.DefaultInterface());
+            return container;
         }
     }
 
